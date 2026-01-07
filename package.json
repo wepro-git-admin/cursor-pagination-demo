@@ -1,6 +1,6 @@
 {
-  "name": "cursor-pagination-demo",
-  "version": "1.0.0",
+  "name": "cursor-pagination-demo-sham2",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "start": "node server.js",

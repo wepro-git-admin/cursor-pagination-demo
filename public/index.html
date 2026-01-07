@@ -1,10 +1,54 @@
 <!doctype html>
 <html>
-<head><title>Cursor Pagination</title></head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cursor Pagination Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    input, select { padding: 8px; margin-right: 8px; }
+    button { padding: 10px 14px; margin-right: 8px; }
+    pre { background: #f3f3f3; padding: 12px; border-radius: 8px; }
+    .row { margin-bottom: 12px; }
+    .muted { color: #666; font-size: 12px; }
+  </style>
+</head>
 <body>
-<h3>Cursor Pagination Demo</h3>
-<button onclick="next()">Next</button>
-<pre id="out"></pre>
-<script src="app.js"></script>
+  <h3>Cursor Pagination Demo (Next / Previous + Sort)</h3>
+  <div class="muted">Collection: <b>test_pagination_sham2</b>. Cursor encodes filter + sort + tuple anchor (price,_id).</div>
+
+  <div class="row">
+    <input id="category" placeholder="category">
+
+    <select id="priceOp">
+      <option value="">price op</option>
+      <option value="gt">&gt;</option>
+      <option value="gte">&gt;=</option>
+      <option value="lt">&lt;</option>
+      <option value="lte">&lt;=</option>
+    </select>
+
+    <input id="priceValue" type="number" placeholder="price value">
+
+    <select id="sortField">
+      <option value="_id">_id</option>
+      <option value="price">price</option>
+    </select>
+
+    <select id="sortDir">
+      <option value="asc">asc</option>
+      <option value="desc">desc</option>
+    </select>
+
+    <button id="search">Search</button>
+  </div>
+
+  <div class="row">
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+    <span id="flags"></span>
+  </div>
+
+  <pre id="out"></pre>
+  <script src="app.js"></script>
 </body>
 </html>
